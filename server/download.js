@@ -1,10 +1,10 @@
-import ytdl from "ytdl-core"
+import ytdl from "@distube/ytdl-core"
 import fs from "fs"
 
 export const download = (videoId) =>
   new Promise((resolve, rejects) => {
     const videoUrl = "https://www.youtube.com/shorts/" + videoId
-    console.log("Realizando o download do vídeo", videoId)
+    console.log("Realizando o download do vídeo", videoUrl)
 
     ytdl(videoUrl, { quality: "lowestaudio", filter: "audioonly" })
       .on("info", (info) => {
@@ -18,7 +18,6 @@ export const download = (videoId) =>
         console.log("Download do vídeo finalizado com sucesso!")
         resolve()
       })
-
       .on("error", (error) => {
         console.log(
           "Não foi possivel fazer o download do vídeo. Dtealhes do erro: ",

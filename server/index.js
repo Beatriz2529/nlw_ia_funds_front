@@ -12,6 +12,7 @@ app.use(cors())
 app.get("/summary/:id", async (request, response) => {
   try {
     const id = request.params.id
+    console.log("id", id)
     await download(id)
     const audiConverted = await convert()
 
