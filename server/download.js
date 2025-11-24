@@ -20,7 +20,7 @@ export const download = (videoId) =>
       })
       .on("error", (error) => {
         console.log(
-          "Não foi possivel fazer o download do vídeo. Dtealhes do erro: ",
+          "Não foi possivel fazer o download do vídeo. Detalhes do erro: ",
           error
         )
         rejects(error)
